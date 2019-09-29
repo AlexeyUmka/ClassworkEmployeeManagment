@@ -1,0 +1,34 @@
+﻿@model ClassworkEmployeeManagment.Domain.Core.Basic_Models.ProjectForProgrammers
+@{
+    ViewBag.Title = "Home Page";
+}
+@Html.ValidationSummary()
+<div class="myForm">
+    <h1>Project Form</h1>
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>@Html.LabelFor(m => m.ProjectName, "Project Name:")</td>
+                <td>@Html.EditorFor(m => m.ProjectName)</td>
+                <td>@Html.ValidationMessageFor(m => m.ProjectName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.DifficultyLevel, "Difficulty Level:")</td>
+                <td>@Html.EditorFor(m => m.DifficultyLevel)</td>
+                <td>@Html.ValidationMessageFor(m => m.DifficultyLevel)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.StartTime, "Start time of project:")</td>
+                <td>@Html.EditorFor(m => m.StartTime)</td>
+                <td>@Html.ValidationMessageFor(m => m.StartTime)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.FinishTime, "Dedaline: ")</td>
+                <td>@Html.EditorFor(m => m.FinishTime)</td>
+                <td>@Html.ValidationMessageFor(m => m.FinishTime)</td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit" />
+    }
+</div>

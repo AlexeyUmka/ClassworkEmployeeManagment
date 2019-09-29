@@ -1,0 +1,26 @@
+﻿@model List<ClassworkEmployeeManagment.Domain.Core.Basic_Models.ProgrammersTeam>
+@{
+    ViewBag.Title = "About";
+}
+@foreach (ClassworkEmployeeManagment.Domain.Core.Basic_Models.ProgrammersTeam team in Model)
+{
+    <fieldset>
+        <legend>
+            Team ID:@team.TeamID<br />
+            Project Name:@team.Project.ProjectName
+        </legend>
+    <p>Members:</p>
+    @foreach (ClassworkEmployeeManagment.Domain.Core.Basic_Models.Programmer p in team.Members)
+    {
+    <div class="col-4">
+        <p>Name:@p.Name</p>
+        <p>Surname:@p.SurName</p>
+        <p>Patronymic:@p.Patronymic</p>
+        <p>Birthday:@p.BirthDay</p>
+        <p>Level of skill:@p.LevelOfSkill</p>
+        <p>Salary per month:@p.SalaryPerMonth</p>
+    </div>
+    }
+    </fieldset>
+}
+
