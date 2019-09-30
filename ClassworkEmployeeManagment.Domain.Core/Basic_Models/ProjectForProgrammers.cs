@@ -8,15 +8,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClassworkEmployeeManagment.Domain.Core.Basic_Models
 {
-    public class ProjectForProgrammers : IProject<Programmer,ProgrammersTeam>
+    public class ProjectForProgrammers 
     {
         [Key]
         public int ProjectID { get; set; }
         [Required(ErrorMessage = "Please enter the Name of project")]
         [StringLength(maximumLength: 50, MinimumLength = 5, ErrorMessage = "Length must be more than 5 chars and less than 50")]
         public string ProjectName { get; set; }
-       
-        public ITeam<Programmer, ProgrammersTeam> Team { get; set; }
+        [Required]
+        public ProgrammersTeam ProgrammersTeam { get; set; }  
+        
         [Required(ErrorMessage = "Please enter the Diffiuculty level of project")]
         [Range(1, 5)]
         public int DifficultyLevel { get; set; }

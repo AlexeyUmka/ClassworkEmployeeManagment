@@ -8,13 +8,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClassworkEmployeeManagment.Domain.Core.Basic_Models
 {
-    public class ProgrammersTeam : ITeam<Programmer, ProgrammersTeam>
+    public class ProgrammersTeam 
     {
         [Key]
         public int TeamID { get; set; }
-        [Required(ErrorMessage ="Please enter the members of team")]
-        public ICollection<Programmer> Members { get; set; }
-        [Required(ErrorMessage ="Please enter the Project for team")]
-        public IProject<Programmer, ProgrammersTeam> Project { get; set; }
+        public List<Programmer> Programmers { get; set; }
     }
 }

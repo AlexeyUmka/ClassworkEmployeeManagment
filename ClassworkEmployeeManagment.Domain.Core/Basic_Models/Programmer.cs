@@ -32,7 +32,7 @@ namespace ClassworkEmployeeManagment.Domain.Core.Basic_Models
         public DateTime BirthDay { get; set; }
 
         [Required(ErrorMessage = "Please enter the salary of Employee")]
-        public uint SalaryPerMonth { get; set; }
+        public int SalaryPerMonth { get; set; }
 
         [Required]
         public Appointment Appointment { get; } = Appointment.Programmer;
@@ -40,7 +40,8 @@ namespace ClassworkEmployeeManagment.Domain.Core.Basic_Models
         [Required]
         [Range(1, 3)]
         public int LevelOfSkill { get; set; }
-        public ITeam<Programmer, ProgrammersTeam> Team { get; set; }
-        public IEnumerable<IProject<Programmer, ProjectForProgrammers>> Projects { get; set; }
+
+        
+        public List<ProgrammersTeam> ProgrammersTeam { get; set; }
     }
 }

@@ -27,8 +27,8 @@ namespace ClassworkEmployeeManagment.Domain.Core.Extended_Interfaces
         DateTime BirthDay { get; set; }
         [Required(ErrorMessage = "Please enter the salary of Employee")]
         [DataType(DataType.Currency)]
-        [Range(1, uint.MaxValue, ErrorMessage = "The salary must be in range(from 1 to 4 294 967 295)")]
-        uint SalaryPerMonth { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "The salary must be in range(from 1 to 4 294 967 295)")]
+        int SalaryPerMonth { get; set; }
         [Required]
         Appointment Appointment { get;}
     }
