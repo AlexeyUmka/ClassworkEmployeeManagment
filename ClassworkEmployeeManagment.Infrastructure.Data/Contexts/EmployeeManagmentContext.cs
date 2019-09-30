@@ -22,8 +22,6 @@ namespace ClassworkEmployeeManagment.Infrastructure.Data.Contexts
     {
         protected override void Seed(EmployeeManagmentContext context)
         {
-            context.Configuration.ValidateOnSaveEnabled = false;
-            context.SaveChanges();
             context.Programmers.AddRange(new List<Programmer>() {
                 new Programmer(){Name="Valera", SurName="Dubov", Patronymic="Alexandrovich", BirthDay=new DateTime(1990, 5, 12), SalaryPerMonth=500, LevelOfSkill=1},
                 new Programmer(){Name="Stepan", SurName="Vlasov", Patronymic="Maksimovich", BirthDay=new DateTime(1992, 5, 12), SalaryPerMonth=1500, LevelOfSkill=3},

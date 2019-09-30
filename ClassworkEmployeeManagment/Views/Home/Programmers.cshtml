@@ -1,0 +1,35 @@
+﻿@model ClassworkEmployeeManagment.UI.Models.Pagination.IndexViewModel
+@using ClassworkEmployeeManagment.UI.Models.Pagination;
+@{
+    ViewBag.Title = "Programmers";
+}
+
+<h2>Programmers</h2>
+@foreach (var p in Model.Programmers)
+{
+    <table>
+        <tr>
+            <td>Name:@p.Name</td>
+        </tr>
+        <tr>
+            <td>Surname:@p.SurName</td>
+        </tr>
+        <tr>
+            <td>Patronymic:@p.Patronymic</td>
+        </tr>
+        <tr>
+            <td>SalaryPerMonth:@p.SalaryPerMonth</td>
+        </tr>
+        <tr>
+            <td>Level of skill:@p.LevelOfSkill</td>
+        </tr>
+    </table>
+    <br />
+}
+<br />
+@if (Model.PageInfo.TotalPages > 1)
+{
+    <div class="btn-group">
+        @Html.PageLinks(Model.PageInfo, x => Url.Action("Programmers", new { page = x }))
+    </div>
+}
