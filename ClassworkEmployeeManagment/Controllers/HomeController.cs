@@ -19,6 +19,9 @@ namespace ClassworkEmployeeManagment.UI.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            unitOfWork.ProgrammersTeams.Create(new ProgrammersTeam() { Programmers = unitOfWork.Programmers.GetElementsOfRepository().ToList() });
+            unitOfWork.ProgrammersTeams.Create(new ProgrammersTeam() { Programmers = unitOfWork.Programmers.GetElementsOfRepository().ToList() });
+            unitOfWork.Save();
             return View();
         }
         [HttpPost]
@@ -30,24 +33,13 @@ namespace ClassworkEmployeeManagment.UI.Controllers
                 ModelState.AddModelError("FinishTime", "Finish time must be more than StartTime");
             if (ModelState.IsValid)
             {
-                ProjectTeamBuilder projectTeamBuilder = new ProjectTeamBuilder(unitOfWork, project);
-                if (projectTeamBuilder.FormTeamForProject(3, 3))
-                {
-                    project.Team = projectTeamBuilder.ProgrammersTeam;
-                    unitOfWork.Save();
-                    return View("About", unitOfWork.ProgrammersTeams.GetElementsOfRepository());
-                }
-                else
-                {
-                    ModelState.AddModelError("StartTime", "Can't create a team");
-                    return View();
-                }
+                return View();
             }
             else return View();
         }
         public ActionResult About()
         {
-            return View(unitOfWork.ProgrammersTeams.GetElementsOfRepository());
+            return View();
         }
 
         public ActionResult Contact()

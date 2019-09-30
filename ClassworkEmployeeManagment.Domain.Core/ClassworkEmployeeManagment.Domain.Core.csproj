@@ -43,8 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basic_Interfaces\IPerson.cs" />
-    <Compile Include="Basic_Interfaces\IProject.cs" />
-    <Compile Include="Basic_Interfaces\ITeam.cs" />
     <Compile Include="Basic_Models\Programmer.cs" />
     <Compile Include="Basic_Models\ProgrammersTeam.cs" />
     <Compile Include="Basic_Models\ProjectForProgrammers.cs" />
